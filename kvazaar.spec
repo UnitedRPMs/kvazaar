@@ -1,15 +1,16 @@
 # Todo: make main program dinamically linked
+%global commit0 9974380cdd7398af885f4f0b599cc58cdd643b0e
+%global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
+%global gver .git%{shortcommit0}
 
 Name:           kvazaar
 Version:        1.1.0
-Release:        1%{?dist}
+Release:        2%{?gver}%{dist}
 Summary:        An open-source HEVC encoder
 License:        LGPLv2+
 URL:            http://ultravideo.cs.tut.fi/#encoder
 
-Source0:        https://github.com/ultravideo/%{name}/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
-# Fix GCC 7 build
-Patch0:         https://github.com/ultravideo/kvazaar/commit/47a9f0de049e77e866ea5bdd4bc7c795ea6dd641.patch
+Source0:        https://github.com/ultravideo/%{name}/archive/%{commit0}/%{name}-%{shortcommit0}.tar.gz
 
 BuildRequires:  autoconf
 BuildRequires:  automake
@@ -35,7 +36,7 @@ The %{name}-devel package contains libraries and header files for
 developing applications that use %{name}.
 
 %prep
-%autosetup -p1
+%autosetup -n %{name}-%{commit0} 
 autoreconf -vif
 %configure --disable-static
 
@@ -70,6 +71,11 @@ rm -fr %{buildroot}%{_docdir}
 %{_libdir}/pkgconfig/*.pc
 
 %changelog
+
+* Wed Oct 25 2017 David Vasquez <davidva at tutanota dot com> 1.1.0-1.git9974380
+- Upstream
+- Updated to current commit
+
 * Mon Jul 17 2017 Simone Caronni <negativo17@gmail.com> - 1.1.0-1
 - Update to 1.1.0.
 
