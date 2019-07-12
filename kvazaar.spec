@@ -1,16 +1,16 @@
 # Todo: make main program dinamically linked
-%global commit0 cf85d52b9d953d29bcc9f7e158a6a2be6f310078
+%global commit0 5db3a78499c1a82882b1dd71b23bcf8dfa69f925
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 %global gver .git%{shortcommit0}
 
 Name:           kvazaar
-Version:        1.2.0
-Release:        2%{?gver}%{dist}
+Version:        1.3.0
+Release:        1%{?gver}%{dist}
 Summary:        An open-source HEVC encoder
 License:        LGPLv2+
 URL:            http://ultravideo.cs.tut.fi/#encoder
 
-Source0:        https://github.com/ultravideo/%{name}/archive/%{commit0}/%{name}-%{shortcommit0}.tar.gz
+Source0:        https://github.com/ultravideo/kvazaar/archive/%{commit0}/%{name}-%{shortcommit0}.tar.gz
 
 BuildRequires:  autoconf
 BuildRequires:  automake
@@ -72,8 +72,11 @@ rm -fr %{buildroot}%{_docdir}
 
 %changelog
 
+* Thu Jul 11 2017 David Vasquez <davidva at tutanota dot com> 1.3.0-1.git5db3a78
+- Updated to 1.3.0-1.git5db3a78
+
 * Sun Nov 19 2017 David Vasquez <davidva at tutanota dot com> 1.2.0-1.gitcf85d52
-- Udated to 1.2.0-1.gitcf85d52
+- Updated to 1.2.0-1.gitcf85d52
 
 * Wed Oct 25 2017 David Vasquez <davidva at tutanota dot com> 1.1.0-1.git9974380
 - Upstream

@@ -3,5 +3,6 @@ BUILDROOT/*
 RPMS/*
 SPECS/*
 SRPMS/*
-kvazaar*.tar.gz
+*.tar.gz
 .directory
+*.rpm
