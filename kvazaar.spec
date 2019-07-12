@@ -72,7 +72,7 @@ rm -fr %{buildroot}%{_docdir}
 
 %changelog
 
-* Thu Jul 11 2017 David Vasquez <davidva at tutanota dot com> 1.3.0-1.git5db3a78
+* Thu Jul 11 2019 David Vasquez <davidva at tutanota dot com> 1.3.0-1.git5db3a78
 - Updated to 1.3.0-1.git5db3a78
 
 * Sun Nov 19 2017 David Vasquez <davidva at tutanota dot com> 1.2.0-1.gitcf85d52
