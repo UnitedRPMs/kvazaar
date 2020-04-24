@@ -1,10 +1,10 @@
 # Todo: make main program dinamically linked
-%global commit0 5db3a78499c1a82882b1dd71b23bcf8dfa69f925
+%global commit0 9753820b3ab5da3e74374b2724df90a3a5657ca1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 %global gver .git%{shortcommit0}
 
 Name:           kvazaar
-Version:        1.3.0
+Version:        2.0.0
 Release:        1%{?gver}%{dist}
 Summary:        An open-source HEVC encoder
 License:        LGPLv2+
@@ -71,6 +71,9 @@ rm -fr %{buildroot}%{_docdir}
 %{_libdir}/pkgconfig/*.pc
 
 %changelog
+
+* Fri Apr 24 2020 David Vasquez <davidva at tutanota dot com> 2.0.0-1.git9753820
+- Updated to 2.0.0-1.git9753820
 
 * Thu Jul 11 2019 David Vasquez <davidva at tutanota dot com> 1.3.0-1.git5db3a78
 - Updated to 1.3.0-1.git5db3a78
